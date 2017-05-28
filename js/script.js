@@ -73,3 +73,10 @@ for (var i = 0; i < userArrary.length; i++) {
 }
 
 });
+
+
+
+
+search所有的fields(不包括public)
+public属性显示在div右上角
+美化network页面

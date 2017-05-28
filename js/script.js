@@ -27,17 +27,13 @@ var userArrary = [
 ];
 
 var findUser = function(user, query) {
-     // user.isPremium = user.skills.length > 3;
-     // user.age ++;
-      if (user.skills.indexOf(query) !== -1) {
-        return user;
-      }
 
+  return !query || new RegExp(query,"i").test(user.skills) ? user : false;
        
 }
 
 
-$('.search-btn').click(function() {
+$('#search').keyup(function() {
 
   var query = $('#search').val();
 
@@ -47,7 +43,7 @@ $('.search-btn').click(function() {
 for (var i = 0; i < userArrary.length; i++) {
 
   if (findUser(userArrary[i], query)) {
-    console.log(findUser(userArrary[i], query));
+
     var currentUser = $('<div>').addClass('user');
 
     var appendEle = function(tag, attr) {
@@ -68,15 +64,6 @@ for (var i = 0; i < userArrary.length; i++) {
 
   }
 
-
-
 }
 
 });
-
-
-
-
-search所有的fields(不包括public)
-public属性显示在div右上角
-美化network页面
